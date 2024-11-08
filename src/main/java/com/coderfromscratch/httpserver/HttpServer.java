@@ -18,17 +18,20 @@ public class HttpServer {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(HttpServer.class);
 
+    private static final String configFilePath = "src/main/resources/http.json";
+
     public static void main(String[] args) {
 
-        if (args.length != 1) {
-            LOGGER.error("No configuration file provided.");
-            LOGGER.error("Syntax:  java -jar simplehttpserver-1.0-SNAPSHOT.jar  <config.json>");
-            return;
-        }
+//        if (args.length != 1) {
+//            LOGGER.error("No configuration file provided.");
+//            LOGGER.error("Syntax:  java -jar simplehttpserver-1.0-SNAPSHOT.jar  <config.json>");
+//            return;
+//        }
 
         LOGGER.info("Server starting...");
 
-        ConfigurationManager.getInstance().loadConfigurationFile(args[0]);
+        ConfigurationManager.getInstance().loadConfigurationFile(configFilePath);
+//        ConfigurationManager.getInstance().loadConfigurationFile(args[0]);
         Configuration conf = ConfigurationManager.getInstance().getCurrentConfiguration();
 
         LOGGER.info("Using Port: " + conf.getPort());
