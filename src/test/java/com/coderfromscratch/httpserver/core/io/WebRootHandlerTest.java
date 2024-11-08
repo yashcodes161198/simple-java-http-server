@@ -187,7 +187,7 @@ public class WebRootHandlerTest {
     @Test
     void testGetFileMimeTypePng() {
         try {
-            String mimeType = webRootHandler.getFileMimeType("/logo.png");
+            String mimeType = webRootHandler.getFileMimeType("/yash_logo2.png");
             assertEquals("image/png", mimeType);
         } catch (FileNotFoundException e) {
             fail(e);
